@@ -11,8 +11,10 @@ import jb.santos.orgs.model.Produto
 
 class ListaProdutosAdapter(
     private val context: Context,
-    private val produtos: List<Produto>
+    produtos: List<Produto>
 ) : RecyclerView.Adapter<ListaProdutosAdapter.ViewHolder>() {
+
+    private val produtos = produtos.toMutableList()
 
     class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
         fun vincula(produto: Produto) {
@@ -37,4 +39,11 @@ class ListaProdutosAdapter(
     }
 
     override fun getItemCount(): Int = produtos.size
+
+
+    fun update(products: List<Produto>) {
+        this.produtos.clear()
+        this.produtos.addAll(products)
+        notifyDataSetChanged()
+    }
 }

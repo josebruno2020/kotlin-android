@@ -1,9 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activity.FormProductActivity">
+    android:fillViewport="true">
+    <!--    fillViewport para pegar a tela inteira -->
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".ui.activity.FormProductActivity">
+
+        <EditText
+            android:id="@+id/form_nome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="Nome"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/form_descricao"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Descrição"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="@id/form_nome"
+            app:layout_constraintStart_toStartOf="@id/form_nome"
+            app:layout_constraintTop_toBottomOf="@id/form_nome" />
+
+        <EditText
+            android:id="@+id/form_valor"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Valor"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="@id/form_nome"
+            app:layout_constraintStart_toStartOf="@id/form_nome"
+            app:layout_constraintTop_toBottomOf="@id/form_descricao" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="SALVAR"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/form_valor"
+            app:layout_constraintVertical_bias="1" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
