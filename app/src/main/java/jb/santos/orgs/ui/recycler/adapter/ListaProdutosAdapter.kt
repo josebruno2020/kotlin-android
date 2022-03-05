@@ -29,7 +29,7 @@ class ListaProdutosAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(this.context)
-        val view = inflater.inflate(R.layout.product_item, parent, false)
+        val view = inflater.inflate(R.layout.recycler_view_list_item, parent, false)
         return ViewHolder(view)
     }
 

@@ -11,7 +11,7 @@ import jb.santos.orgs.dao.ProdutosDao
 import jb.santos.orgs.ui.activity.FormProductActivity
 import jb.santos.orgs.ui.recycler.adapter.ListaProdutosAdapter
 
-class ListProductsActivity: AppCompatActivity() {
+class ListProductsActivity: AppCompatActivity(R.layout.activity_main) {
 
     private val dao = ProdutosDao()
     private val adapter = ListaProdutosAdapter(context = this, produtos = dao.searchAll())
@@ -19,7 +19,6 @@ class ListProductsActivity: AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
         recyclerViewConfig()
         submitFab()
     }

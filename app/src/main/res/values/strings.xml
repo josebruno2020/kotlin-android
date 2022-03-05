@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Orgs</string>
     <string name="save_product">Produto salvo com sucesso</string>
+    <string name="form_name">Nome</string>
 </resources>

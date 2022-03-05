@@ -2,7 +2,6 @@ package jb.santos.orgs.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -13,10 +12,16 @@ import java.math.BigDecimal
 
 class FormProductActivity : AppCompatActivity(R.layout.activity_form_product) {
 
+    private val dao = ProdutosDao()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val button = findViewById<Button>(R.id.button)
+        clickButton()
+    }
+
+    private fun clickButton() {
+        val button = findViewById<Button>(R.id.form_button)
         button.setOnClickListener {
             submitForm()
         }
@@ -38,13 +43,8 @@ class FormProductActivity : AppCompatActivity(R.layout.activity_form_product) {
             valor = valorBigDecimal
         )
 
-        Log.i("FormProductActivity", "novo Produto: $product")
+        this.dao.add(product)
 
-        val dao = ProdutosDao()
-        dao.add(product)
-
-
-        Log.i("FormProductActivity", "produtos que tem: ${dao.searchAll()}")
         Toast.makeText(this, R.string.save_product, Toast.LENGTH_SHORT).show()
         finish()
     }
